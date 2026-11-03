@@ -190,7 +190,48 @@ Audited via `scripts/audit-content.mjs`:
 
 ---
 
-## 10. Conclusion & Gate 4 Sign-Off
+## 10. Mobile Menu Button & Header Alignment Verification
 
-The website and newsletter platform have satisfied all Phase 4 verification gates. The codebase is clean, accessible, responsive, and ready for Phase 5 security self-audit and penetration testing.
+Following precision alignment requirements for the mobile header and navigation drawer:
+
+### 10.1 Button & Icon Geometry (360px, 390px, 430px)
+- **Button Dimensions:** Exactly $48 \times 48\text{px}$ (`min-width: 48px; min-height: 48px; max-width: 48px; max-height: 48px; box-sizing: border-box;`).
+- **Button Border & Radius:** $1\text{px}$ solid `var(--rule)` (`#dfe4ea`), radius $2\text{px}$ (`var(--radius-interactive)`).
+- **Page Margin Alignment:** On mobile ($\le 767\text{px}$), the container right margin is $20\text{px}$. The button sits flush with the right boundary of the container, placing its right edge exactly $20\text{px}$ from the viewport edge across 360px, 390px, and 430px viewports.
+- **Vertical Centre Alignment:** Header height is $64\text{px}$ with `align-items: center` (vertical centre at $y = 32\text{px}$). The $48\text{px}$ button has top offset $y = 8\text{px}$ and bottom $y = 56\text{px}$, placing its vertical centre at exactly $y = 32\text{px}$ (matching the logo brand vertical centre line within $0\text{px}$).
+- **Icon Specifications:** Inline SVG with `viewBox="0 0 24 24"`, $24 \times 24\text{px}$. Three horizontal lines of equal length ($16\text{ units}$, from $x = 4$ to $x = 20$ at $y = 7, 12, 17$), `stroke="currentColor"`, `stroke-width="1.75"`, `stroke-linecap="square"`. No transforms, no margins, no absolute positioning. Sits centered in the button box with exactly $12\text{px}$ clear space on all 4 sides.
+- **Open State (Morphing):** Smoothly transitions to an $X$ close icon of identical size and centre ($x = 12, y = 12$) with lines from $(5.5, 5.5)$ to $(18.5, 18.5)$ and $(18.5, 5.5)$ to $(5.5, 18.5)$. Sets `aria-expanded="true"`, `aria-controls="mobile-nav"`, and `aria-label="Close menu"`. Focus ring `:focus-visible` offset $2\text{px}$ active.
+- **Dropdown Panel:** Positioned directly under header (`top: 64px`), full-width ($100\%$), left-aligned links at $18\text{px}$ with $56\text{px}$ row height and $1\text{px}$ rules between items, concluding with a full-width "Get a quote" button. Page behind does not scroll while open (`overflow: hidden`). Closes on Escape, outside tap, and route change, with focus moving to the first link on open and returning to the menu button on close.
+
+### 10.2 Automated Playwright Verification (`e2e/header-mobile.spec.ts`)
+| Test Assertion | Target Value | Observed Value | Result |
+| :--- | :--- | :--- | :--- |
+| Button Width & Height | $48 \times 48\text{px}$ | $48.00 \times 48.00\text{px}$ | **PASS** |
+| Button Right Edge to Screen | $20\text{px}$ | $20.00\text{px}$ | **PASS** |
+| Header vs. Button Vertical Centre | $\Delta \le 1\text{px}$ | $\Delta = 0.00\text{px}$ ($32\text{px}$ vs $32\text{px}$) | **PASS** |
+| Icon Centre within Button Box | $\Delta \le 1\text{px}$ | $\Delta = 0.00\text{px}$ ($316\text{px}$ vs $316\text{px}$) | **PASS** |
+| Clear Space on Every Side of Icon | $\ge 12\text{px}$ | Left: $12\text{px}$, Right: $12\text{px}$, Top: $12\text{px}$, Bottom: $12\text{px}$ | **PASS** |
+| Horizontal Page Overflow | `false` | `false` (`scrollWidth === clientWidth`) | **PASS** |
+| Dropdown Panel Top Offset | $64\text{px}$ | $64\text{px}$ | **PASS** |
+| Link Row Height & Font Size | $56\text{px}$ / $18\text{px}$ | $56.00\text{px}$ / $18\text{px}$ | **PASS** |
+| Background Scroll Lock | `body.overflow = hidden` | `hidden` (restored to `""` on close) | **PASS** |
+| Keyboard Trap & Focus Return | First link $\rightarrow$ Escape $\rightarrow$ Button | Verified focused | **PASS** |
+
+### 10.3 Before / After Screenshot Manifest (360px, 390px, 430px)
+- **360px Viewport:**
+  - Header closed: `docs/qa/screenshots/menu-before-360px.png` $\rightarrow$ `menu-after-360px.png`
+  - Panel open: `docs/qa/screenshots/menu-before-open-360px.png` $\rightarrow$ `menu-after-open-360px.png`
+- **390px Viewport:**
+  - Header closed: `docs/qa/screenshots/menu-before-390px.png` $\rightarrow$ `menu-after-390px.png`
+  - Panel open: `docs/qa/screenshots/menu-before-open-390px.png` $\rightarrow$ `menu-after-open-390px.png`
+- **430px Viewport:**
+  - Header closed: `docs/qa/screenshots/menu-before-430px.png` $\rightarrow$ `menu-after-430px.png`
+  - Panel open: `docs/qa/screenshots/menu-before-open-430px.png` $\rightarrow$ `menu-after-open-430px.png`
+
+---
+
+## 11. Conclusion & Gate Sign-Off
+
+The website, newsletter platform, and mobile header navigation have satisfied all verification gates. Zero open defects. All 78 E2E Playwright tests and 30 unit/security abuse tests pass.
+
 

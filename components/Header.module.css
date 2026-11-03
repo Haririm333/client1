@@ -3,17 +3,20 @@
   top: 0;
   z-index: 50;
   height: 64px;
+  max-height: 64px;
   background-color: var(--paper);
   border-bottom: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
+  box-sizing: border-box;
 }
 
 .headerInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 64px;
+  max-height: 64px;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .brand {
@@ -21,6 +24,9 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-height: 64px;
 }
 
 .brand:hover {
@@ -31,11 +37,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
 }
 
 .brandText {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
+  max-height: 64px;
 }
 
 .brandName {
@@ -45,6 +56,7 @@
   line-height: 1;
   color: var(--ink);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .brandTagline {
@@ -54,6 +66,7 @@
   line-height: 1.2;
   color: var(--blue-deep);
   letter-spacing: 0.14em;
+  white-space: nowrap;
 }
 
 .desktopNav {
@@ -65,6 +78,9 @@
   align-items: center;
   gap: 28px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .navLink {
@@ -77,6 +93,7 @@
   padding: 8px 0;
   position: relative;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .navLink:hover {
@@ -101,101 +118,152 @@
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  flex: none;
+  white-space: nowrap;
+  max-height: 64px;
 }
 
 .quoteBtn {
-  display: none;
+  display: none !important;
 }
 
+/* 1. Button box: exactly 48x48px, border 1px solid var(--rule), radius 2px,
+   display: inline-flex; align-items: center; justify-content: center;
+   padding: 0; flex: none. Right edge aligned to the page margin (20px). */
 .menuToggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  padding: 0;
+  margin: 0;
+  flex: none;
   background: transparent;
   border: 1px solid var(--rule);
-  border-radius: var(--radius-interactive);
+  border-radius: 2px;
+  color: var(--ink);
   cursor: pointer;
-  padding: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
+.menuToggle:hover {
+  border-color: var(--ink);
+  background-color: var(--sheet);
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid var(--blue-deep);
+  outline-offset: 2px;
+}
+
+/* 2. Icon: inline SVG, viewBox 0 0 24 24, stroke currentColor,
+   stroke-width 1.75, stroke-linecap square.
+   No margins, no transforms, no absolute positioning.
+   Sits exactly in the centre with at least 12px clear space on every side. */
 .menuIcon {
-  position: relative;
-  width: 20px;
-  height: 2px;
-  background-color: var(--ink);
-  transition: background-color 0.15s ease;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  position: static;
+  flex: none;
+  overflow: visible;
 }
 
-.menuIcon::before,
-.menuIcon::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: var(--ink);
-  transition: transform 0.2s ease, top 0.2s ease;
-}
-
-.menuIcon::before {
-  top: -6px;
-}
-
-.menuIcon::after {
-  top: 6px;
-}
-
-.menuIconOpen {
-  background-color: transparent;
-}
-
-.menuIconOpen::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.menuIconOpen::after {
-  top: 0;
-  transform: rotate(-45deg);
-}
-
+/* 5. Dropdown panel: opens directly under the header (top: 64px), full width,
+   left-aligned links at 18px with 56px row height, 1px rules between rows,
+   "Get a quote" as final full-width button. */
 .mobileNav {
-  position: absolute;
+  position: fixed;
   top: 64px;
   left: 0;
   right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavInner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
   background-color: var(--paper);
   border-bottom: 2px solid var(--ink);
-  padding: 24px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
 }
 
 .mobileList {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.mobileItem {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
 }
 
 .mobileLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 56px;
+  padding: 0 var(--page-margin);
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--ink);
   text-decoration: none;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--sheet);
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.mobileLink:hover {
+.mobileLink:hover,
+.mobileLink:focus-visible {
+  background-color: var(--sheet);
   color: var(--blue-deep);
   text-decoration: none;
 }
 
-.mobileActionItem {
-  margin-top: 12px;
+.mobileActionBox {
+  padding: 16px var(--page-margin) 20px;
+}
+
+.mobileQuoteBtn {
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.mobileBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(31, 35, 38, 0.35);
+  z-index: 1;
 }
 
 @media (min-width: 860px) {
@@ -203,8 +271,12 @@
     display: block;
   }
 
+  .headerActions {
+    gap: 12px;
+  }
+
   .quoteBtn {
-    display: inline-flex;
+    display: inline-flex !important;
     padding: 10px 18px;
     min-height: 40px;
   }
