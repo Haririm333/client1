@@ -24,7 +24,6 @@ export const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500'],
   variable: '--font-mono',
   display: 'swap',
-  preload: false,
 });
 
 // Dispatch newspaper masthead and section headlines (only on /dispatch)
@@ -33,14 +32,11 @@ export const oldStandardTT = Old_Standard_TT({
   weight: ['400', '700'],
   variable: '--font-serif-masthead',
   display: 'swap',
-  preload: false,
 });
 
-// Dispatch newspaper editorial body (only on /dispatch)
+// Dispatch newspaper editorial body (only on /dispatch) - variable font
 export const sourceSerif4 = Source_Serif_4({
   subsets: ['latin'],
-  weight: ['400', '600'],
   variable: '--font-serif-body',
   display: 'swap',
-  preload: false,
 });
