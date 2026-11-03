@@ -1,0 +1,74 @@
+/* The MechLab Engineering - Design System Tokens */
+/* "The Technical Drawing Sheet" */
+
+:root {
+  /* Color Palette */
+  --ink: #1f2326;
+  --ink-2: #2b3035;
+  --paper: #ffffff;
+  --sheet: #f4f5f7;
+  --rule: #dfe4ea;
+  --muted: #5b6570; /* 5.9:1 on white (WCAG AA compliant) */
+  --blue: #1e7bf0; /* Accents, lines, large graphics only; 4.1:1 on white */
+  --blue-deep: #1560c8; /* Buttons, links, small text; white on it = 5.9:1 */
+  --blue-wash: #eaf2fe;
+
+  /* Spacing Scale (4px base) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* Layout Containers */
+  --container-max: 1200px;
+  --container-gutter: 24px;
+  --section-pad: clamp(64px, 8vw, 120px);
+  --page-margin: 20px;
+
+  /* Radii & Borders */
+  --radius-interactive: 2px;
+  --radius-none: 0px;
+  --border-rule: 1px solid var(--rule);
+  --focus-ring: 0 0 0 2px var(--paper), 0 0 0 4px var(--blue-deep);
+
+  /* Typography Sizes & Heights */
+  --font-h1: clamp(44px, 6.2vw, 84px);
+  --line-h1: 0.98;
+  --font-h2: clamp(32px, 4vw, 52px);
+  --line-h2: 1.05;
+  --font-h3: 24px;
+  --line-h3: 1.2;
+  --font-body: 17px;
+  --line-body: 1.6;
+  --font-small: 14px;
+  --line-small: 1.5;
+  --font-label: 12px;
+  --line-label: 1.2;
+  --tracking-label: 0.08em;
+  --max-line-ch: 64ch;
+
+  /* Font Families (Assigned via next/font variables) */
+  --font-heading: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif-masthead: 'Old Standard TT', Georgia, serif;
+  --font-serif-body: 'Source Serif 4', Georgia, serif;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-margin: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-body: 18px;
+  }
+}

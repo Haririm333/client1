@@ -1,0 +1,39 @@
+.drawingWrapper {
+  width: 100%;
+  max-width: 540px;
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 16px;
+  position: relative;
+}
+
+.svgCanvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Stroke Draw Animation (under 900ms) */
+.strokeDraw circle,
+.strokeDraw path,
+.strokeDraw line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawStroke 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strokeDraw circle,
+  .strokeDraw path,
+  .strokeDraw line {
+    animation: none !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

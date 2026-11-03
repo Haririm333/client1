@@ -1,0 +1,155 @@
+.masthead {
+  text-align: center;
+  margin-bottom: var(--space-48);
+}
+
+.doubleRuleTop {
+  height: 4px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.doubleRuleThin {
+  height: 1px;
+  background-color: var(--rule);
+  margin: 6px 0;
+}
+
+.doubleRuleBottom {
+  height: 4px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  margin-top: 16px;
+}
+
+.datelineRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.mastheadTitle {
+  font-family: var(--font-serif-masthead);
+  font-size: clamp(40px, 7vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 16px 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blue-deep);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.introSection {
+  margin-bottom: var(--space-32);
+}
+
+.introLead {
+  font-family: var(--font-serif-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.feedLinkRow {
+  margin-top: 12px;
+}
+
+.feedLink {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+
+.archiveSection {
+  margin-top: var(--space-64);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--space-32);
+}
+
+.archiveTitle {
+  font-family: var(--font-serif-masthead);
+  font-size: var(--font-h2);
+  margin-bottom: var(--space-32);
+}
+
+.issuesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.issueItem {
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+}
+
+.issueMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.issueVol {
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.issueKicker {
+  background-color: var(--sheet);
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+}
+
+.issueHeadline {
+  font-family: var(--font-serif-masthead);
+  font-size: clamp(24px, 3.5vw, 32px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.issueLink {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.issueLink:hover {
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+
+.issueSummary {
+  font-family: var(--font-serif-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: var(--space-20);
+  max-width: 720px;
+}
+
+.issueActions {
+  margin-top: auto;
+}
+

@@ -1,0 +1,79 @@
+.ctaSection {
+  padding: var(--section-pad) 0;
+}
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+}
+
+.ctaHeading {
+  font-size: var(--font-h2);
+  margin-bottom: var(--space-16);
+}
+
+.ctaLead {
+  font-size: var(--font-body);
+  line-height: var(--line-body);
+  margin-bottom: var(--space-32);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.ctaDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  border-top: 1px solid var(--ink-2);
+  padding-top: var(--space-32);
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactLabel {
+  font-family: var(--font-mono);
+  font-size: var(--font-label);
+  font-weight: 500;
+  color: #9aa6b2;
+  letter-spacing: var(--tracking-label);
+}
+
+.contactValue {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.contactValue:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.contactNote {
+  font-size: var(--font-small);
+  color: #9aa6b2;
+}
+
+@media (min-width: 860px) {
+  .ctaGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+
+  .ctaDetails {
+    border-top: none;
+    border-left: 1px solid var(--ink-2);
+    padding-top: 0;
+    padding-left: var(--space-48);
+  }
+}

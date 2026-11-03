@@ -1,0 +1,187 @@
+.noticeBox {
+  background-color: #fafbfc;
+  border: 1px solid var(--rule);
+  padding: 0;
+  margin: var(--space-48) 0;
+  position: relative;
+}
+
+.noticeInner {
+  padding: var(--space-48) var(--space-32);
+}
+
+.doubleRuleTop {
+  height: 4px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.doubleRuleBottom {
+  height: 4px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.mastheadLabel {
+  font-family: var(--font-mono);
+  font-size: var(--font-label);
+  font-weight: 500;
+  color: var(--blue-deep);
+  letter-spacing: var(--tracking-label);
+  margin-bottom: var(--space-12);
+}
+
+.noticeHeading {
+  font-family: var(--font-serif-masthead);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--space-16);
+  line-height: 1.1;
+}
+
+.noticeCopy {
+  font-family: var(--font-serif-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 680px;
+  margin-bottom: var(--space-32);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  max-width: 600px;
+}
+
+.fieldWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.fieldLabel {
+  font-family: var(--font-mono);
+  font-size: var(--font-label);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: var(--tracking-label);
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-interactive);
+  font-family: var(--font-mono);
+  font-size: var(--font-small);
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.input:focus {
+  border-color: var(--blue-deep);
+}
+
+.consentText {
+  font-size: var(--font-small);
+  color: var(--muted);
+  line-height: var(--line-small);
+}
+
+.privacyLink {
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+
+.errorMessage {
+  font-family: var(--font-mono);
+  font-size: var(--font-small);
+  color: #b91c1c;
+  margin-top: 4px;
+}
+
+.successBox {
+  background-color: var(--blue-wash);
+  border: 1px solid var(--blue);
+  padding: var(--space-24);
+  border-radius: var(--radius-interactive);
+}
+
+.successHeading {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--blue-deep);
+  margin-bottom: 8px;
+}
+
+.successCopy {
+  font-size: var(--font-small);
+  color: var(--ink);
+  line-height: var(--line-small);
+}
+
+/* Compact variant for footer */
+.compactNotice {
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  padding: var(--space-16);
+}
+
+.compactHeading {
+  font-family: var(--font-serif-masthead);
+  font-size: 18px;
+  font-weight: 700;
+  margin: var(--space-12) 0 var(--space-4) 0;
+}
+
+.compactText {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: var(--space-12);
+}
+
+.compactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.emailInput {
+  flex: 1;
+  height: 38px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-interactive);
+}
+
+.successMessage {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue-deep);
+  margin: var(--space-8) 0;
+}
+
+@media (min-width: 640px) {
+  .formRow {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}

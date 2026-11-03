@@ -1,0 +1,365 @@
+.heroSection {
+  padding: clamp(48px, 6vw, 96px) 0;
+  border-bottom: 1px solid var(--rule);
+  background-color: var(--paper);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  letter-spacing: 0.14em;
+  margin-bottom: var(--space-12);
+}
+
+.heroTitle {
+  font-size: var(--font-h1);
+  line-height: var(--line-h1);
+  margin-bottom: var(--space-24);
+  color: var(--ink);
+}
+
+.heroLead {
+  font-size: var(--font-body);
+  line-height: var(--line-body);
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: var(--space-32);
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  margin-bottom: var(--space-48);
+}
+
+.quickSpecs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-16);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--space-24);
+}
+
+.quickSpecItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.specCode {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.specDesc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.heroDrawingCol {
+  display: flex;
+  justify-content: center;
+}
+
+/* Sections */
+.section {
+  padding: var(--section-pad) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sectionTitle {
+  font-size: var(--font-h2);
+  margin-bottom: var(--space-12);
+}
+
+.sectionLead {
+  font-size: var(--font-body);
+  color: var(--muted);
+  max-width: 640px;
+}
+
+/* Services Ruled Table */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background-color: var(--paper);
+}
+
+.servicesTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 720px;
+}
+
+.servicesTable th {
+  font-family: var(--font-mono);
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  color: var(--muted);
+  background-color: var(--sheet);
+  padding: 14px 20px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.serviceRow {
+  border-bottom: 1px solid var(--rule);
+  transition: background-color 0.15s ease;
+}
+
+.serviceRow:hover {
+  background-color: #fafbfc;
+}
+
+.codeCell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blue-deep);
+  padding: 20px;
+  vertical-align: top;
+}
+
+.titleCell {
+  padding: 20px;
+  vertical-align: top;
+}
+
+.serviceLink {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.serviceLink:hover {
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+
+.serviceTagline {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.descCell {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding: 20px;
+  vertical-align: top;
+}
+
+.actionCell {
+  padding: 20px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.tableLink {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blue-deep);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tableLink:hover {
+  text-decoration: underline;
+}
+
+/* 5-Step Process */
+.processSection {
+  padding: var(--section-pad) 0;
+  border-bottom: 1px solid var(--rule);
+  background-color: var(--sheet);
+}
+
+.processStrip {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  margin-bottom: var(--space-48);
+}
+
+.processCard {
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  padding: var(--space-24);
+  position: relative;
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stepDimensionLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.dimensionLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.stepTitle {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.stepHeadline {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.processFooterCta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Why Us */
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+}
+
+.whyList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.whyItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.whyTick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--blue-wash);
+  color: var(--blue-deep);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid var(--blue);
+  flex-shrink: 0;
+}
+
+.whyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.whyDesc {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.drawingSheetBox {
+  border: 2px solid var(--ink);
+  background-color: var(--sheet);
+  padding: var(--space-32);
+}
+
+.drawingSheetHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.boxTag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.boxRev {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.boxText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: var(--space-24);
+}
+
+.boxStandards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.standardTag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 10px;
+  background-color: var(--paper);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+@media (min-width: 860px) {
+  .heroGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .processStrip {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .whyGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
